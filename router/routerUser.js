@@ -86,5 +86,9 @@ router.delete('/deleteuser/:uId',requireLogin,(req,res)=>{
       }
   })
 })
+router.post('/signout',async(req,res)=>{
+  res.clearCookie('token');
+  res.status(200).json({message:'Signout successfully'})
+});
 
 module.exports = router;
